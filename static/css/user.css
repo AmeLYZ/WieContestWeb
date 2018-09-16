@@ -1,0 +1,149 @@
+.container {
+    background-color: #ddd;    
+    
+    
+}
+
+.pmsg-mark {
+    background-color: #eee;
+    padding: 10px;
+    min-height: 300px;
+}
+
+.row {
+    margin: 0;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.row>[class*='col-'] {
+    display: flex;
+    flex-direction: column;
+}
+
+.personal-msg,
+.mark {
+    background-color: #fff;
+    width: calc(50% - 8px);
+    margin: 0;
+    padding: 50px;
+}
+
+.personal-msg {
+    margin-right: 15px;
+}
+
+
+.rank-con {
+    background-color: #eee;
+    margin: 10px 0 0 0;
+    padding: 10px;
+}
+
+.rank {
+    background-color: #fff;
+    padding: 50px;
+}
+
+table,
+th {
+    text-align: center;
+}
+
+td {
+    width: 20%;
+}
+
+.big-line {
+    font-size: 1.1em;
+}
+
+.mini-th {
+    font-weight: bold;
+}
+
+.mini-th,
+.mini-td {
+    font-size: 0.8em;
+}
+
+#apply-btn{
+    position: absolute;
+    bottom: 50px;
+    left: 20%;
+    color: #fff;
+    background-color: #f44;
+    width: 60%;
+    outline: none;
+    border: none;
+    padding: 0;
+}
+#apply-btn a{
+    display: block;
+    color: #fff;
+    line-height: 40px;
+}
+#msg-text{
+    margin: 30px auto;
+}
+
+.le-sp{
+    letter-spacing: 1em;
+}
+
+
+
+
+
+
+
+
+
+
+#footer {
+    height: 200px;
+    background-color: #333;
+}
+@media (min-width: 1200px) {
+    .container{
+        width: 80%;
+        padding: 10px;
+        margin: 70px auto;
+    }
+}
+@media (max-width: 700px) {
+    .container{
+        width: 100%;
+        padding: 0;
+        margin: 50px auto;
+    }
+    .personal-msg, .mark{
+        width: 100%;
+        margin: 0;
+        margin-top: 10px;
+        padding: 20px;
+    }
+    #msg-text{
+        padding-bottom: 50px;
+    }
+    .rank{
+        padding: 20px;
+    }
+}
+.mini-th td, .mini-td td{
+    color: #666;
+}
+.big-line td{
+    font-weight: bold;
+
+}
+.big-line td:nth-child(2){
+    text-align: left;
+}
+td{
+    display: table-cell;
+    vertical-align: middle!important;
+}

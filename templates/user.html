@@ -1,0 +1,91 @@
+{% extends 'basic.html' %}
+
+{% block title %}user{% endblock %}
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for("static", filename='css/user.css') }}">
+{% endblock %}
+
+{% block main%}
+    <div class="container">
+        <div class="col-md-12 pmsg-mark row">
+            <div class="col-md-6 personal-msg">
+                <div id="msg-text">
+                    <span><p>用户<span class="le-sp">名:</span><strong>{{ username }}</strong></p></span>
+                    <span><p><span class="le-sp">学号:</span><strong>{{ studentID }}</strong></p></span>
+                    <span><p><span class="le-sp">邮箱:</span><strong>{{ mailbox }}</strong></p></span>
+                </div>
+                <button id="apply-btn" class="btn btn-default"><a href="{{ url_for('submit_get') }}">申&nbsp;请&nbsp;测&nbsp;评</a></button>
+            </div>
+            <div class="col-md-6 mark">
+                <span><p>总排<span class="le-sp">名:</span><strong>{{ ranking_item.ranking }}</strong></p></span>
+                <span><p>总得<span class="le-sp">分:</span><strong>{{ ranking_item.t_score }}</strong></p></span>
+                <table class="table table-striped">
+                    <caption>得分详情</caption>
+                    <thead>
+                        <tr>
+                            <th>方向</th>
+                            <th>类型</th>
+                            <th>得分</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {% for i in ranking_item.score %}
+                        <tr>
+                            <td>{{ i.direction }}</td>
+                            <td>{{ i.type }}</td>
+                            <td>{{ i.score }}</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col-md-12 rank-con">
+            <div class="rank">
+                <table class="table table-striped">
+                    <caption>排行榜</caption>
+                    <thead>
+                        <tr>
+                            <th>总排名</th>
+                            <th>昵称</th>
+                            <th colspan="3">总得分</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {% for r_i in ranking_list %}
+                        <!--一个基础的例子的开头-->
+                        <tr class="big-line">
+                            <td>{{ r_i.ranking }}</td>
+                            <td>{{ r_i.username }}</td>
+                            <td colspan="3">{{ r_i.t_score }}</td>
+                        </tr>
+                        <!--每个人都要输出一个mini-th-->
+                        <!--若为零分,则不输出mini-th和下面的详情-->
+                        <tr class="mini-th">
+                            <td></td>
+                            <td></td>
+                            <td>方向</td>
+                            <td>类型</td>
+                            <td>得分</td>
+                        </tr>
+                        <!--这是一项得分详情-->
+                        {% for i in r_i.score %}
+                        <tr class="mini-td">
+                            <td></td>
+                            <td></td>
+                            <td>{{ i.direction }}</td>
+                            <td>{{ i.type }}</td>
+                            <td>{{ i.score }}</td>
+                        </tr>
+                        {% endfor %}
+                        <!--到此构成一项得分详情-->
+                        <!--一个基础例子的结束-->
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid" id="footer">
+    </div>
+{% endblock %}

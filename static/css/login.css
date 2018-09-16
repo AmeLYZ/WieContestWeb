@@ -1,0 +1,111 @@
+html,
+body {
+    height: 100%;
+    user-select: none;
+}
+
+@media screen and (min-width: 1200px) {
+    .form-con {
+        width: 40%;
+        position: relative;
+        left: 70%;
+    }
+    #card{
+            padding: 0 50px;
+    }
+}
+@media screen and (max-width: 1200px) {
+    .form-con {
+        position: static;
+        left: none;
+    }
+    #card{
+        padding: 0 50px;
+    }
+}
+@media screen and (max-width: 700px) {
+    .form-con {
+        position: static;
+        left: none;
+    }
+    #card{
+        padding: 0 16px;
+    }
+    .container{
+        margin: 0;
+        width: 100%;
+    }
+}
+
+.bg {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background: url("1.jpg") no-repeat fixed;
+    background-size: cover;
+    /*background-position: 20% 80%;*/
+    padding: 1px;
+    box-sizing: border-box;
+    z-index: 1;
+}
+
+.bg:after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: inherit;
+    filter: blur(0px) brightness(100%) grayscale(0%);
+    z-index: 2;
+}
+
+.container {
+    background-color: rgba(255, 143, 143, 0);
+    vertical-align: middle;
+    display: table;
+    height: 100%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+}
+
+.row {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+
+
+label {
+    font-size: 20px;
+    color: #000;
+    position: relative;
+    top: -5px;
+}
+
+.form-control {
+    height: 40px;
+    line-height: 26px;
+    font-size: 16px;
+}
+
+.input-group {
+    box-shadow: 0 0 30px 1px #aaa;
+}
+
+.buttons {
+    margin-top: 30px;
+    font-size: 35px;
+}
+
+#card {
+    background-color: rgba(255, 255, 255, 0.3);
+    height: 350px;
+    padding-top: 50px;
+    border-radius: 4px;
+    box-shadow: 0 0 30px 1px #000;
+}

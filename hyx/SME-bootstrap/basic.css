@@ -1,0 +1,221 @@
+html,
+body {
+    overflow: hidden;
+    overflow-y: auto;
+    min-width: 320px;
+    transition: 0.3s;
+    background-color: #ccc;
+    font-family: Microsoft YaHei;
+}
+@font-face {
+    font-family: Song;
+    /*这里是说明调用来的字体名字*/
+    src: url('song_font.ttf');
+    /*这里是字体文件路径*/
+}
+
+
+/*普通电脑1080p*/
+
+
+/*1920*/
+
+@media (min-width: 1200px) {
+    #login-signup {
+        margin-right: 50px;
+    }
+    #footer {
+        height: 300px;
+        width: 100%;
+        background-color: #333;
+    }
+    #ul-log-sign li {
+        width: 160px;
+    }
+    #ul-log-sign li ul li a {
+        width: 160px;
+    }
+}
+
+
+
+
+
+/*老年人用巨屏适配\黑脸*/
+
+@media (min-width: 2000px) {}
+
+
+
+
+
+/*iPad Pro*/
+
+
+/*1024*/
+
+@media (max-width: 1200px) {}
+
+
+
+
+
+/*iPad*/
+
+
+/*768*/
+
+@media (max-width: 1000px) {}
+
+
+
+
+
+/*手机*/
+
+
+/*320~414*/
+
+@media (max-width: 700px) {
+    #login-signup {
+        display: inline-block;
+        margin-top: -50px;
+        margin-right: 0;
+    }
+    #footer {
+        height: 100px;
+        width: 100%;
+        background-color: #333;
+    }
+    #ul-log-sign li {
+        width: 100px;
+    }
+    #ul-log-sign li ul li a {
+        width: 100px;
+        padding-left: 20px;
+    }
+    #ul-log-sign li ul li a span {
+        display: none;
+    }
+}
+
+
+
+
+/*end*/
+
+.clearfix:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.navbar {
+    padding: 0 10px 0 10px;
+    background-color: #111;
+    color: #fff;
+    user-select: none;
+    font-family: Song;
+}
+
+.navbar-brand {
+    color: red;
+}
+
+#brand {
+    color: #fff;
+}
+
+.navbar-default {
+    border: 0;
+}
+
+#login-signup {
+    float: right;
+}
+
+#login-signup ul {
+    margin: 0;
+}
+
+#ul-log-sign li {
+    display: inline-block;
+    height: 50px;
+    line-height: 50px;
+    font-size: 1.3em;
+    padding: 0 20px;
+}
+
+#ul-log-sign li:hover {
+    background-color: #444;
+}
+
+#ul-log-sign a {
+    color: #fff;
+    text-decoration: none;
+    height: 50px;
+    line-height: 50px;
+    font-size: 1em;
+    display: inline-block;
+}
+
+li a span {
+    padding-right: 10px;
+    height: 100%;
+    position: 0;
+}
+nav{
+    height: 50px;
+}
+
+
+
+#ul-log-sign {
+    height: 150px;
+}
+
+#ul-log-sign li {
+    height: auto;
+    padding: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    /*加宽度width属来兼容部分浏览*/
+}
+
+#ul-log-sign li:hover ul {
+    display: inline-block;
+    transition-delay: 1s;
+    transition: 1s;
+    transition-timing-function: ease-in;
+}
+
+#ul-log-sign li span {
+    padding: 0 20px;
+}
+
+#ul-log-sign li ul {
+    display: none;
+    padding: 0;
+    float: left;
+    background-color: black;
+    font-size: 20px;
+    transition-delay: 1s;
+    transition: 1s;
+    transition-timing-function: ease-in;
+}
+
+#ul-log-sign li ul li {
+    font-size: 16px;
+    text-align: left;
+    height: 50px;
+    line-height: 50px;
+    display: list-item;
+    transition-delay: 0.1s;
+    transition: 0.2s;
+    transition-timing-function: ease-in;
+}
+
+#ul-log-sign li ul li a {
+    height: 50px;
+}

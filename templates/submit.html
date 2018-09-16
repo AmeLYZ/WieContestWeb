@@ -1,0 +1,48 @@
+{% extends 'basic.html' %}
+
+{% block title %}submit{% endblock %}
+{% block head %}
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="{{ url_for("static", filename='css/submit.css') }}">
+    <link rel="stylesheet" href="{{ url_for("static", filename='bootstrap-fileinput-master/css/fileinput.css') }}">
+    <link rel="stylesheet" href="{{ url_for("static", filename='bootstrap-fileinput-master/themes/explorer/theme.css') }}">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
+{% endblock %}
+
+{% block main%}
+    <div class="container">
+        <div class="ch-up-con col-md-12">
+            <div class="choose">
+                <form action="" method="post" enctype='multipart/form-data'>
+                    <select id="testSelect" class="selectpicker show-tick form-control" data-width="250px" data-first-option="false" title='请选择要提交测评的题目' name="selected">
+                        <option value="硬件_基础题">硬件·基础题</option>
+                        <option value="硬件_进阶题">硬件·进阶题</option>
+                        <option value="嵌入式_基础题">嵌入式·基础题</option>
+                        <option value="嵌入式_进阶题">嵌入式·进阶题</option>
+                        <option value="前端_基础题">前端·基础题</option>
+                        <option value="前端_进阶题">前端·进阶题</option>
+                        <option value="数据科学_基础题">数据科学·基础题</option>
+                        <option value="数据科学_进阶题">数据科学·进阶题</option>
+                        <option value="开放题">开放题</option>
+                    </select>
+                    <input id="input-1a" name="file1" type="file" uploadUrl="" class="file" data-show-preview="false" showCaption="false" multiple="true" data-showCaption="true">
+                    <span id="comments" name="file">留言:</span>
+                    <textarea class="form-control" rows="5" name="comments" placeholder="可以在这留下你的疑问或建议"></textarea>
+                    <button type="submit" class="btn btn-default">提交</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid" id="footer">
+    </div>
+{% endblock %}
+{% block mainjs %}
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+        <script src="{{ url_for("static", filename='bootstrap-fileinput-master/js/fileinput.js') }}"></script>
+    <script src="{{ url_for("static", filename='bootstrap-fileinput-master/themes/explorer/theme.js') }}"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
+{% endblock %}
+

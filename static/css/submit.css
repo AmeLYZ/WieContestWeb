@@ -1,0 +1,87 @@
+.container {
+    background-color: #ddd;
+    width: 80%;
+    margin: 70px auto;
+    padding: 10px;
+}
+
+.row {
+    margin: 0;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.row>[class*='col-'] {
+    display: flex;
+    flex-direction: column;
+}
+
+.ch-up-con {
+    padding: 0;
+}
+
+form {
+    width: 50%;
+}
+
+#form-username {
+	width: 250px;
+    display: none;
+}
+
+.choose {
+    height: 500px;
+    background-color: #eee;
+    padding: 10px;
+}
+
+.dropdown-menu ul li a {
+    font-size: 16px;
+    height: 40px;
+    line-height: 34px;
+    outline: none;
+}
+
+.dropdown-menu ul li a:hover {
+    color: #fff;
+    background-color: #3288d1;
+}
+
+.selected a {}
+
+
+.file {
+    width:
+}
+
+.file-input {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+#comments {
+    font-size: 16px;
+    padding-left: 5px;
+}
+
+.form-control {
+    margin-bottom: 30px;
+    width: ;
+}
+
+
+
+
+
+
+
+
+
+#footer {
+    height: 200px;
+    background-color: #333;
+}

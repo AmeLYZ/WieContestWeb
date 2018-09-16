@@ -1,0 +1,96 @@
+{% extends 'basic.html' %}
+
+{% block title %}main{% endblock %}
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for("static", filename='css/test.css') }}">
+    <link rel="stylesheet" href="{{ url_for("static", filename='css/test_screen_adaptation.css') }}">
+{% endblock %}
+
+{% block main%}
+    <div class="container-fluid clearfix" id="top_play_div">
+        <video class="video" autoplay="true">
+            <source src="{{ url_for("static", filename='pic/mi.mp4') }}" type="video/mp4">
+        </video>
+        <div class="col-md-12" id="SME_CUP_NAME">
+            <p class="text-center" id="SME">第二届&nbsp;·&nbsp;SME杯</p>
+            <p class="text-center" id="SME">电子设计暨互联网解决方案大赛</p>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="col-md-12">
+            <div class="row side_content">
+                <div class="col-md-3" id="side_bar">
+                    <ul class="nav nav-pills nav-stacked">
+                        <li id="bg1"><a id="bg1a" class="unclicked" data-toggle="pill" href="#1">大赛简介</a></li>
+                        <li id="sm1"><a id="sm1a" class="unclicked" data-toggle="pill" href="#2">硬件·基础题</a></li>
+                        <li id="sm2"><a id="sm2a" class="unclicked" data-toggle="pill" href="#3">硬件·进阶题</a></li>
+                        <li id="sm3"><a id="sm3a" class="unclicked" data-toggle="pill" href="#4">嵌入式·基础题</a></li>
+                        <li id="sm4"><a id="sm4a" class="unclicked" data-toggle="pill" href="#5">嵌入式·进阶题</a></li>
+                        <li id="sm5"><a id="sm5a" class="unclicked" data-toggle="pill" href="#6">前端·基础题</a></li>
+                        <li id="sm6"><a id="sm6a" class="unclicked" data-toggle="pill" href="#7">前端·进阶题</a></li>
+                        <li id="sm7"><a id="sm7a" class="unclicked" data-toggle="pill" href="#8">数据·基础题</a></li>
+                        <li id="sm8"><a id="sm8a" class="unclicked" data-toggle="pill" href="#9">数据·进阶题</a></li>
+                        <li id="bg2"><a id="bg2a" class="unclicked" data-toggle="pill" href="#10">开放题</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-9" id="main_content">
+                    <div class="body_part tab-content">
+                        <h2>【比赛目的】</h2>
+                        <span>
+                            <p class="indent">
+                           	经济与管理学院旨在培养“懂技术的管理者”，这也是工作坊成立的初衷。此次比赛目的在于加深同学们对于学院培养目标的认识，了解技术工作，激发起对电子设计与互联网技术的热情与兴趣，引导新生走近电子世界，体验技术带给世界的魅力。</p>
+                            <p class="indent" style="font-weight: bold;">
+                            比赛是零门槛比赛，比赛时间会适当延长，同学们可以边学边赛。</p>
+                        	</span>
+                        <h2>【参赛须知】</h2>
+                        <span>
+                        	<p>
+                        	1. 比赛面向经济与管理学院所有在校学生，参赛者以个人为单位参加比赛。<br>
+                        	2. 比赛时间为 9 月 17 日—10 月 15 日。所有作品提交须在 10 月 15 日 19：00 前完成。<br>
+                        	3. 本次比赛采取积分制，比赛题目共有八题，其中电子设计及控制类 4 题，互联网及软件解决方案类 4 题。参赛者可根据兴趣进行选择题目。参赛题目相关信息将会在后面详细讲解。<br>
+                        	4. 在选定题目并上交报名表后，可根据所选题目至经管楼 A404 创新创业工作坊领取相关元件、使用相关工具，并按时参加工作坊举办的题目讲解和技术培训。<br>
+                        	5. 比赛期间，工作坊每天将会定时开放供参赛同学使用。<br>
+                        	6. 工作坊所有电脑与仪器均可在工作坊成员的指导下使用（特殊标注及私人的除外）。<br>
+                        	7. 比赛由总分排名从高到低，分别设一等奖两人，二等奖四人，三等奖八人，优秀奖若干组，分别对应奖品、获奖证书及创新学分。<br>
+                        	8. 该比赛最终解释权归创新创业工作坊所有。</p>
+                        	<p style="font-weight: bold;">PS: 本比赛和参与招新无关。</p>
+                        	</span>
+                        <h2>【比赛题目详解】</h2>
+                        <span>
+                        	<p>
+                        		<p class="indent" style="font-weight: bold;">此次比赛一共分为两个大类：电子设计类和互联网解决方案类。每一个大类里又细分为两个方向：</p>
+                        		<p>
+                        		• 电子设计类：硬件方向和嵌入式方向；<br>
+                        		• 互联网解决方案：前端方向和数据科学方向。<br></p>
+
+                        		<p class="indent" style="font-weight: bold;">每一个方向有两道题目，一道基础题，一道进阶题。所以，此次比赛总共八道题目可供大家选择。（可能会增加一道开放题）<br></p>
+                        		<p>• 此次比赛采取积分制，四个方向分值相同：基础题30分，难度题50分。总分共320分。<br>
+                        		• 基础题目不设置过程分，达标即获得30分。难度题将会设置过程分数，每道题目详细的规则将会在后面给出。<br>
+                        		• 比赛负责团队将定期更新参赛人员的得分情况统计结果，但不会公布得分对应人员。<br>
+                        		• 如果出现相似两人此题得分均减半，如果出现雷同将取消比赛资格，请同学们知悉。</p>
+
+                        	</p>
+                        	</span>
+                        <h2>【比赛相关指导及培训安排】</h2>
+                        <span>
+                        	<p>
+                        	1. 工作坊会在比赛之前召开大会。在会上，每个方向的负责人将会对每道题目进行较为详细的阐述，供大家做参赛选择的参考。<br>
+                        	2. 工作坊在比赛进行过程中的指导与培训将会分为线上指导以及线下指导。<br>
+                        	<p class="indent">• 线上指导：比赛负责团队将会在比赛期中不定时/定时发布相关题目的指导信息。同时参赛者随时可以通过QQ等方式寻求指导意见。<br>
+                        	</p>
+                        	<p class="indent">
+                        	• 线下指导：工作坊经常会有熟悉相关方向的大佬出没，欢迎大家常来工作坊。</p></span>
+                        <img src="{{ url_for("static", filename='pic/qq_group.jpg') }}" style="width: 10em;">
+                        <p style="text-align: center; padding: 0;position: relative; top: -30px; font-weight: bold;">第二届SME杯比赛暨工作坊招新群: 690495668</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+    </div>
+{% endblock %}
+{% block mainjs %}
+    <script src="{{ url_for("static", filename='js/test.js') }}"></script>
+{% endblock %}
+

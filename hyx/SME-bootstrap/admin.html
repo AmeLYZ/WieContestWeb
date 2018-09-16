@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>admin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="basic.css">
+    <link rel="stylesheet" href="admin.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <span class="sr-only">切换导航</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <a class="navbar-brand" id="brand" href="">创新创业工作坊</a>
+            </div>
+            <div id="login-signup">
+                <ul id="ul-log-sign">
+                    <li><span>欢迎您,陈独秀kjfalksjf </span>
+                        <ul>
+                            <li><a href="user.html"><span class="glyphicon glyphicon-user"></span>个人主页</a></li>
+                            <li><a href="user.html"><span class="glyphicon glyphicon-log-out"></span>退出</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="col-md-12 pmsg-mark row">
+            <div class="col-md-12 personal-msg">
+                <div id="msg-text">
+                    <span><p>用户<span class="le-sp">名:</span><strong>Donald Trump</strong></p>
+                    </span>
+                    <span><p><span class="le-sp">昵称:</span><strong>川普</strong></p>
+                    </span>
+                    <span><p><span class="le-sp">邮箱:</span><strong>dt@trump.com</strong></p>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12 rank-con">
+            <ul id="myTab" class="nav nav-tabs">
+                <li class="active">
+                    <a href="#detail-page" data-toggle="tab">提交详情</a>
+                </li>
+                <li><a href="#rank-page" data-toggle="tab">排行榜</a></li>
+            </ul>
+            <div id="myTabContent" class="tab-content rank">
+                <div class="tab-pane fade in active" id="detail-page">
+                    <table class="table table-striped">
+                        <caption>提交详情</caption>
+                        <thead>
+                            <tr>
+                                <th>方向</th>
+                                <th>类型</th>
+                                <th>提交者昵称</th>
+                                <th>提交者真实姓名</th>
+                                <th>材料</th>
+                                <th>&nbsp;</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!--一个例子的开头-->
+                            <tr class="big-line">
+                                <td>硬件</td>
+                                <td>基础题</td>
+                                <td>Sakura</td>
+                                <td>路明非</td>
+                                <td><a href=""><strong>下载</strong></a></td>
+                                <td>
+                                    <button type="button" class="btn btn-default" data-toggle="collapse" data-target="#lumingfei-1,#lumingfei-2">展开&nbsp;&nbsp;<span class="glyphicon glyphicon-chevron-down"></span></button>
+                                    <button type="button" class="btn btn-default">折叠&nbsp;&nbsp;<span class="glyphicon glyphicon-chevron-up"></span></button>
+                                </td>
+                            </tr>
+                            <tr id="lumingfei-1" class="mini-th collapse fade">
+                                <th colspan="2">提交者留言</th>
+                                <th colspan="2">测评人回复&nbsp;/&nbsp;测评评价</th>
+                                <th>评分</th>
+                            </tr>
+                            <tr id="lumingfei-2" class="feedback collapse fade">
+                                <td colspan="2"><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil laudantium autem architecto consequuntur impedit natus, consequatur ipsa nostrum reprehenderit pariatur magni alias dignissimos molestiae quam enim aliquam corporis, iure aliquid.</span></td>
+                                <form action="" method="get">
+                                    <!--下面这个input需要分配value-->
+                                    <input type="text" name="real_name" value="路明非" style="display: none;">
+                                    <td colspan="2">
+                                        <textarea class="form-control" style="resize:none;" rows=8 name="comments" placeholder="回复提交者的留言 / 对提交的作品点评 / 提出指导意见"></textarea>
+                                    </td>
+                                    <td class="score">
+                                        <input class="form-control" type="text" name="score">
+                                    </td>
+                                    <td class="submit-feedback">
+                                        <button type="submit" class="btn btn-default">提交</button>
+                                    </td>
+                                </form>
+                            </tr>
+                            <!--一个例子的结尾-->
+                        </tbody>
+                    </table>
+                </div>
+                <div class="tab-pane fade" id="rank-page">
+                    <table class="table table-striped">
+                        <caption>排行榜</caption>
+                        <thead>
+                            <tr>
+                                <th>总排名</th>
+                                <th>昵称</th>
+                                <th colspan="3">总得分</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!--一个基础的例子的开头-->
+                            <tr class="big-line">
+                                <td>1</td>
+                                <td>王重阳</td>
+                                <td colspan="3">110</td>
+                            </tr>
+                            <!--每个人都要输出一个mini-th-->
+                            <!--若为零分,则不输出mini-th和下面的详情-->
+                            <tr class="mini-th">
+                                <td></td>
+                                <td></td>
+                                <td>方向</td>
+                                <td>类型</td>
+                                <td>得分</td>
+                            </tr>
+                            <!--这是一项得分详情-->
+                            <tr class="mini-td">
+                                <td></td>
+                                <td></td>
+                                <td>硬件</td>
+                                <td>基础题</td>
+                                <td>30</td>
+                            </tr>
+                            <!--到此构成一项得分详情-->
+                            <tr class="mini-td">
+                                <td></td>
+                                <td></td>
+                                <td>硬件</td>
+                                <td>进阶题</td>
+                                <td>30</td>
+                            </tr>
+                            <tr class="mini-td">
+                                <td></td>
+                                <td></td>
+                                <td>嵌入式</td>
+                                <td>基础题</td>
+                                <td>30</td>
+                            </tr>
+                            <!--一个基础例子的结束-->
+                            <tr class="big-line">
+                                <td>2</td>
+                                <td>郭靖</td>
+                                <td colspan="3">107</td>
+                            </tr>
+                            <tr class="mini-th">
+                                <td></td>
+                                <td></td>
+                                <td>方向</td>
+                                <td>类型</td>
+                                <td>得分</td>
+                            </tr>
+                            <tr class="mini-td">
+                                <td></td>
+                                <td></td>
+                                <td>硬件</td>
+                                <td>进阶题</td>
+                                <td>30</td>
+                            </tr>
+                            <tr class="mini-td">
+                                <td></td>
+                                <td></td>
+                                <td>嵌入式</td>
+                                <td>基础题</td>
+                                <td>30</td>
+                            </tr>
+                            <tr class="big-line">
+                                <td>3</td>
+                                <td>杨过</td>
+                                <td colspan="3">103</td>
+                            </tr>
+                            <tr class="mini-th">
+                                <td></td>
+                                <td></td>
+                                <td>方向</td>
+                                <td>类型</td>
+                                <td>得分</td>
+                            </tr>
+                            <tr class="mini-td">
+                                <td></td>
+                                <td></td>
+                                <td>硬件</td>
+                                <td>进阶题</td>
+                                <td>30</td>
+                            </tr>
+                            <tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid" id="footer">
+    </div>
+    <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+
+</html>

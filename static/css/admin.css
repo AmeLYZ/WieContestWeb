@@ -1,0 +1,221 @@
+.container {
+    background-color: #ddd;
+    width: 80%;
+    margin: 70px auto;
+    padding: 10px;
+}
+
+.pmsg-mark {
+    background-color: #eee;
+    padding: 10px;
+}
+
+.row {
+    margin: 0;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.row>[class*='col-'] {
+    display: flex;
+    flex-direction: column;
+}
+
+.personal-msg,
+.mark {
+    background-color: #fff;
+    width: calc(50% - 8px);
+    margin: 0;
+    padding: 50px;
+}
+
+.personal-msg {
+    margin-right: 15px;
+}
+
+
+.rank-con {
+    background-color: #eee;
+    margin: 10px 0 0 0;
+    padding: 10px;
+}
+
+.rank {
+    background-color: #fff;
+    padding: 50px 20px;
+}
+
+.application {
+    height: 120px;
+    background-color: #eee;
+    margin-bottom: 20px;
+}
+
+
+
+button {
+    font-size: 10px;
+    line-height: 10px;
+}
+
+th,
+.big-line td {
+    text-align: center;
+}
+
+td {
+    width: 18%;
+}
+
+.big-line {
+    font-size: 1em;
+    line-height: 50px;
+}
+
+tbody .big-line td {
+    padding: 20px;
+}
+
+.mini-th,
+.mini-td {
+    font-size: 0.9em;
+}
+
+.score,
+.submit-feedback {
+    text-align: center;
+}
+
+.score input {
+    width: 100px;
+    margin: 0 auto;
+    display: inline-block;
+}
+
+.submit-feedback button {
+    margin: 0 auto;
+    display: inline-block;
+}
+
+table tbody .big-line td,
+table tbody .feedback td {
+    vertical-align: middle;
+}
+
+#msg-text {
+    margin: 30px auto;
+}
+
+.le-sp {
+    letter-spacing: 1em;
+}
+
+
+
+
+
+
+
+#footer {
+    height: 200px;
+    background-color: #333;
+}
+
+
+@media (min-width: 1200px) {
+    .container {
+        width: 80%;
+        padding: 10px;
+        margin: 70px auto;
+    }
+    #ul-log-sign li {
+        width: 160px;
+    }
+    #ul-log-sign li ul li a {
+        width: 160px;
+    }
+}
+
+@media (max-width: 700px) {
+    .container {
+        width: 100%;
+        padding: 0;
+        margin: 50px auto;
+    }
+    .personal-msg,
+    .mark {
+        width: 100%;
+        margin: 0;
+        margin-top: 10px;
+        padding: 20px;
+    }
+    #msg-text {
+        padding-bottom: 20px;
+    }
+    .rank {
+        padding: 20px;
+    }
+    #ul-log-sign li {
+        width: 100px;
+    }
+    #ul-log-sign li ul li a {
+        width: 100px;
+        padding-left: 20px;
+    }
+    #ul-log-sign li ul li a span {
+        display: none;
+    }
+}
+
+#ul-log-sign {
+    height: 150px;
+}
+
+#ul-log-sign li {
+    height: auto;
+    padding: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    /*加宽度width属来兼容部分浏览*/
+}
+
+#ul-log-sign li:hover ul {
+    display: inline-block;
+    transition-delay: 1s;
+    transition: 1s;
+    transition-timing-function: ease-in;
+}
+
+#ul-log-sign li span {
+    padding: 0 20px;
+}
+
+#ul-log-sign li ul {
+    display: none;
+    padding: 0;
+    float: left;
+    background-color: black;
+    font-size: 20px;
+    transition-delay: 1s;
+    transition: 1s;
+    transition-timing-function: ease-in;
+}
+
+#ul-log-sign li ul li {
+    font-size: 16px;
+    text-align: left;
+    height: 50px;
+    line-height: 50px;
+    display: list-item;
+    transition-delay: 0.1s;
+    transition: 0.2s;
+    transition-timing-function: ease-in;
+}
+
+#ul-log-sign li ul li a {
+    height: 50px;
+}

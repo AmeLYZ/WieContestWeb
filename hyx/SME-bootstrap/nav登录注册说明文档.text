@@ -1,0 +1,33 @@
+<!--
+2018.08.20
+17:46
+@黄晔熙
+-->
+<!--下面两段没有注释的代码放在nav下的<div id="login-signup">......</div>元素后面
+	未登录时显示第一段,登录后显示第二段
+	CSS文件单独发一份新的,可以直接替换
+-->
+<!--
+<div class="navbar-header">
+    <span class="sr-only">切换导航</span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <a class="navbar-brand" id="brand" href="">创新创业工作坊</a>
+</div>
+-->
+<!--以下是第一段代码-->
+<div id="login-signup">
+    <ul id="ul-log-sign">
+        <li><a href="login.html"><span></span>登录</a></li>
+        <li><a href="signup.html"><span></span>注册</a></li>
+    </ul>
+</div>
+<!--以下是第二段代码-->
+<div id="login-signup">
+    <ul id="ul-log-sign">
+        <li>欢迎您,陈独秀</li>
+        <li><a href="user.html"><span class="glyphicon glyphicon-user"></span>个人主页</a></li>
+        <li><a href="user.html"><span class="glyphicon glyphicon-log-out"></span>退出</a></li>
+    </ul>
+</div>

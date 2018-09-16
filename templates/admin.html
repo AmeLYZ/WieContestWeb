@@ -1,0 +1,150 @@
+{% extends 'basic.html' %}
+
+{% block title %}admin{% endblock %}
+{% block head %}
+<link rel="stylesheet" href="{{ url_for("static", filename='css/admin.css') }}">
+{% endblock %}
+
+{% block main %}
+    <div class="container">
+        <div class="col-md-12 pmsg-mark row">
+            <div class="col-md-6 personal-msg">
+                <span><p>用户名:<strong>{{ username }}</strong></p></span>
+                <span><p>昵称:<strong>{{ studentID }}</strong></p></span>
+                <span><p>邮箱:<strong>{{ mailbox }}</strong></p></span>
+            </div>
+            <div class="col-md-6 mark">
+                <span><p>总排名: <strong>0</strong></p></span>
+                <span><p>总得分:<strong>999</strong></p></span>
+                <table type="button" class="table table-striped">
+                    <caption>得分详情</caption>
+                    <thead>
+                        <tr>
+                            <th>方向</th>
+                            <th>类型</th>
+                            <th>得分</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>开放题</td>
+                            <td>开放题</td>
+                            <td>999</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col-md-12 rank-con">
+            <ul id="myTab" class="nav nav-tabs">
+                <li class="active">
+                    <a href="#detail-page" data-toggle="tab">提交详情</a>
+                </li>
+                <li><a href="#rank-page" data-toggle="tab">排行榜</a></li>
+            </ul>
+            <div id="myTabContent" class="tab-content rank">
+                <div class="tab-pane fade in active" id="detail-page">
+                    <table class="table table-striped">
+                        <caption>申请详情</caption>
+                        <thead>
+                            <tr>
+                                <th>方向</th>
+                                <th>类型</th>
+                                <th>提交者昵称</th>
+                                <th>提交者真实姓名</th>
+                                <th>材料</th>
+                                <th>&nbsp;</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for submit in submits %}
+                            <!--一个例子的开头-->
+                            <tr class="big-line">
+                                <td>{{ submit.direction }}</td>
+                                <td>{{ submit.type }}</td>
+                                <td>{{ submit.username }}</td>
+                                <td>{{ submit.realname }}</td>
+                                <td><a href="{{ url_for('download', filename=submit.filepath) }}" download="{{ submit.filepath }}"><strong>下载</strong></a></td>
+                                <td>
+                                    <button type="button" class="btn btn-default" data-toggle="collapse" data-target="#collapse-1-{{ submit.submitid }},#collapse-1-{{ submit.submitid }}"><span class="glyphicon glyphicon-chevron-up"></span><span class="glyphicon glyphicon-chevron-down"></span></button>
+                                </td>
+                            </tr>
+                            <tr id="collapse-1-{{ submit.submitid }}" class="mini-th collapse fade">
+                                <th colspan="2">提交者留言</th>
+                                <th colspan="2">测评人回复&nbsp;/&nbsp;测评评价</th>
+                                <th>评分</th>
+                            </tr>
+                            <tr id="collapse-1-{{ submit.submitid }}" class="feedback collapse fade">
+                                <td colspan="2"><span>{{ submit.message }}</span></td>
+                                <form action="" method="post">
+                                    <!--下面这个input需要分配value-->
+                                    <input type="text" name="submitid" value="{{ submit.submitid }}" style="display: none;">
+                                    <input type="text" name="username" value="{{ submit.username }}" style="display: none;">
+                                    <input type="text" name="direction" value="{{ submit.direction }}" style="display: none;">
+                                    <input type="text" name="type" value="{{ submit.type }}" style="display: none;">
+                                    <td colspan="2">
+                                        <textarea class="form-control" style="resize:none;" rows=8 name="comments" placeholder="回复提交者的留言 / 对提交的作品点评 / 提出指导意见"></textarea>
+                                    </td>
+                                    <td class="score">
+                                        <input class="form-control" type="text" name="score" required="required">
+                                    </td>
+                                    <td class="submit-feedback">
+                                        <button type="submit" class="btn btn-default">提交</button>
+                                    </td>
+                                </form>
+                            </tr>
+                            <!--一个例子的结尾-->
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="tab-pane fade" id="rank-page">
+                    <table class="table table-striped">
+                        <caption>排行榜</caption>
+                        <thead>
+                            <tr>
+                                <th>总排名</th>
+                                <th>昵称</th>
+                                <th colspan="3">总得分</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                    {% for r_i in ranking_list %}
+                        <!--一个基础的例子的开头-->
+                        <tr class="big-line">
+                            <td>{{ r_i.ranking }}</td>
+                            <td>{{ r_i.username }}</td>
+                            <td colspan="3">{{ r_i.t_score }}</td>
+                        </tr>
+                        <!--每个人都要输出一个mini-th-->
+                        <!--若为零分,则不输出mini-th和下面的详情-->
+                        <tr class="mini-th">
+                            <td></td>
+                            <td></td>
+                            <td>方向</td>
+                            <td>类型</td>
+                            <td>得分</td>
+                        </tr>
+                        <!--这是一项得分详情-->
+                        {% for i in r_i.score %}
+                        <tr class="mini-td">
+                            <td></td>
+                            <td></td>
+                            <td>{{ i.direction }}</td>
+                            <td>{{ i.type }}</td>
+                            <td>{{ i.score }}</td>
+                        </tr>
+                        {% endfor %}
+                        <!--到此构成一项得分详情-->
+                        <!--一个基础例子的结束-->
+                    {% endfor %}
+                    </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid" id="footer">
+    </div>
+{% endblock %}

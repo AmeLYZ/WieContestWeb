@@ -1,0 +1,155 @@
+@font-face {
+    font-family: Title_Font;
+    /*这里是说明调用来的字体名字*/
+    src: url('title_font.ttf');
+    /*这里是字体文件路径*/
+}
+
+@font-face {
+    font-family: Song;
+    /*这里是说明调用来的字体名字*/
+    src: url('song_font.ttf');
+    /*这里是字体文件路径*/
+}
+
+
+.clicked {
+    background-color: #337ab7;
+    color: #fff;
+    height: 80px;
+    line-height: 60px;
+    padding-left: 30px;
+    font-size: 35px;
+    transition: 0.1s;
+}
+
+.clicked:hover {
+    background-color: #337ab7!important;
+    color: #fff;
+    transition: 0.3s;
+}
+
+.unclicked {
+    background-color: #fff;
+    height: 65px;
+    line-height: 45px;
+    font-size: 23px;
+    text-align: center;
+    transition: 0.1s;
+    transition-delay: 0s;
+}
+
+.unclicked:hover {
+    background-color: #337ab7!important;
+    color: #fff;
+    transition: 0.3s;
+}
+
+.container-fluid,
+#SME_CUP_NAME {
+    padding: 0;
+}
+
+#SME_CUP_NAME {
+    padding: 0;
+    font-family: Title_Font;
+}
+
+#top_play_div {
+    text-align: center;
+    position: relative;
+    margin-top: 50px;
+    padding: 0;
+    background-color: #000;
+    user-select: none;
+    overflow: hidden;
+}
+
+.video {
+    z-index: -999;
+    filter: blur(5px) brightness(60%) saturate(20%);
+}
+
+#SME_CUP_NAME {
+    position: relative;
+    z-index: 1;
+    color: #fff;
+}
+
+.side_content {
+    background-color: #eee;
+}
+
+#side_bar {
+    user-select: none;
+    font-family: Title_Font;
+}
+
+#main_content {
+    height: auto;
+    border: 0px solid red;
+    background-color: #fff;
+}
+
+
+
+.body_part img {
+    max-width: 100%;
+    min-width: 120px;
+    display: block;
+    margin: 50px auto;
+    border-radius: 4px;
+    box-shadow: 0 0 50px 1px #888;
+}
+
+
+
+
+#main_content {
+    padding: 10px 100px 10px 10px;
+    width: calc(100% - 330px);
+}
+
+.body_part {
+    font-size: 20px;
+    line-height: 50px;
+}
+
+.body_part p,
+.body_part strong {
+    margin-bottom: 0;
+}
+
+.body_part h2 {
+    margin-top: 50px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-family: Song;
+    font-weight: bold;
+}
+
+.indent {
+    text-indent: 2em;
+}
+
+#bg1 {
+    margin-top: 0;
+}
+
+#bg2 {
+    margin-bottom: 0;
+}
+
+table {
+    width: 90%!important;
+}
+.body_part h1{
+    margin-top: 50px;
+    margin-bottom: 80px;
+    text-align: center;
+    font-family: Song;
+    font-weight: bold;
+}
+.body_part ul{
+    padding-left: 50px;
+}

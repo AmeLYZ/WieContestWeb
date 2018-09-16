@@ -1,0 +1,188 @@
+html,
+body {
+    height: 100%;
+    user-select: none;
+}
+
+
+
+
+
+
+/*普通电脑1080p*/
+
+
+/*1920*/
+
+@media (min-width: 1200px) {
+    #login-signup {
+        margin-right: 50px;
+    }
+    .form-con {
+        width: 30%;
+        position: relative;
+        left: 75%;
+    }
+    .buttons {
+        margin-top: 30px;
+    }
+    .bg {
+        height: 100%;
+    }
+}
+
+
+
+
+
+
+
+
+/*老年人用巨屏适配\黑脸*/
+
+@media (min-width: 2000px) {}
+
+
+
+
+
+
+
+
+/*iPad Pro*/
+
+
+/*1024*/
+
+@media (max-width: 1200px) {}
+
+
+
+
+
+
+
+
+/*iPad*/
+
+
+/*768*/
+
+@media (max-width: 1000px) {}
+
+
+
+
+
+
+
+
+/*手机*/
+
+
+/*320~414*/
+
+@media (max-width: 700px) {
+    #login-signup {
+        display: inline-block;
+        margin-top: -50px;
+        margin-right: 0;
+    }
+    .bg {
+        margin-top: 50px;
+        height: calc(100% - 50px);
+    }
+    .container {
+        margin: 0;
+        padding: 0;
+        width: 88%;
+    }
+    .form-con {
+        width: 100%;
+    }
+}
+@media screen and (max-width: 350px) {
+    .bg {
+        background-size: auto;
+        height: 568px;
+    }
+}
+
+
+
+
+
+
+
+/*end*/
+
+.bg {
+    width: 100%;
+    position: relative;
+    background: url("signbg.png") no-repeat fixed;
+    background-size: cover;
+    padding: 1px;
+    box-sizing: border-box;
+    z-index: 1;
+}
+
+
+/*
+.bg:after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: inherit;
+    filter: blur(0px) brightness(100%) grayscale(0%);
+    z-index: 2;
+}
+*/
+
+.container {
+    background-color: rgba(255, 143, 143, 0);
+    vertical-align: middle;
+    display: table;
+    height: 100%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+}
+
+.row {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.form-group {
+    margin-bottom: 5px;
+}
+
+label {
+    font-size: 16px;
+    color: #000;
+    position: relative;
+    top: 0px;
+}
+
+.form-control {
+    height: 38px;
+    line-height: 24px;
+    font-size: 16px;
+}
+
+.input-group {
+    box-shadow: 0 0 30px 1px #aaa;
+}
+
+.buttons {
+    font-size: 35px;
+}
+
+#btn2 {
+    margin-top: 20px;
+}

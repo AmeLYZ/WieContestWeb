@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>main</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for("static", filename='css/basic.css') }}">
+    <link rel="stylesheet" href="{{ url_for("static", filename='css/test.css') }}">
+    <link rel="stylesheet" href="{{ url_for("static", filename='css/test_screen_adaptation.css') }}">
+    <!--body最后面已经有了
+    <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
+</head>
+
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container-fluid clearfix">
+            <div class="navbar-header">
+                <span class="sr-only">切换导航</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <a class="navbar-brand" id="brand" href="">创新创业工作坊</a>
+            </div>
+            <div id="login-signup">
+                <ul id="ul-log-sign">
+                    <li><a href="/login"><span></span>登录</a></li>
+                    <li><a href="/register"><span></span>注册</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid clearfix" id="top_play_div">
+        <video class="video" autoplay="true">
+            <source src="{{ url_for("static", filename='pic/mi.mp4') }}" type="video/mp4">
+        </video>
+        <div class="col-md-12" id="SME_CUP_NAME">
+            <p class="text-center" id="SME">第二届&nbsp;·&nbsp;SME杯</p>
+            <p class="text-center" id="SME">电子设计暨互联网解决方案大赛</p>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="col-md-12">
+            <div class="row side_content">
+                <div class="col-md-3" id="side_bar">
+                    <ul class="nav nav-pills nav-stacked">
+                        <li id="bg1"><a id="bg1a" data-toggle="pill" href="#1" class="unclicked" onclick="return click_to_read(bg1)">大赛简介</a></li>
+                        <li id="sm1"><a id="sm1a" data-toggle="pill" href="#2" class="unclicked" onclick="return click_to_read(sm1)">硬件·基础题</a></li>
+                        <li id="sm2"><a id="sm2a" data-toggle="pill" href="#3" class="unclicked" onclick="return click_to_read(sm2)">硬件·进阶题</a></li>
+                        <li id="sm3"><a id="sm3a" data-toggle="pill" href="#4" class="unclicked" onclick="return click_to_read(sm3)">嵌入式·基础题</a></li>
+                        <li id="sm4"><a id="sm4a" data-toggle="pill" href="#5" class="unclicked" onclick="return click_to_read(sm4)">嵌入式·进阶题</a></li>
+                        <li id="sm5"><a id="sm5a" data-toggle="pill" href="#6" class="unclicked" onclick="return click_to_read(sm5)">前端·基础题</a></li>
+                        <li id="sm6"><a id="sm6a" data-toggle="pill" href="#7" class="unclicked" onclick="return click_to_read(sm6)">前端·进阶题</a></li>
+                        <li id="sm7"><a id="sm7a" data-toggle="pill" href="#8" class="unclicked" onclick="return click_to_read(sm7)">数据科学·基础题</a></li>
+                        <li id="sm8"><a id="sm8a" data-toggle="pill" href="#9" class="unclicked" onclick="return click_to_read(sm8)">数据科学·进阶题</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-9" id="main_content">
+                    <div class="body_part tab-content">
+                        <div class="tab-pane fade in active" id="1">
+                            <!--大赛简介-->
+                            <h2>【比赛目的】</h2>
+                            <span>
+                            <p class="indent">
+                            经济与管理学院旨在培养“懂技术的管理者”，这也是工作坊成立的初衷。此次比赛目的在于加深同学们对于学院培养目标的认识，了解技术工作，激发起对电子设计与互联网技术的热情与兴趣，引导新生走近电子世界，体验技术带给世界的魅力。</p>
+                            <p class="indent" style="font-weight: bold;">
+                            比赛是零门槛比赛，比赛时间会适当延长，同学们可以边学边赛。</p>
+                            </span>
+                            <h2>【参赛须知】</h2>
+                            <span>
+                            <p>
+                            1. 比赛面向经济与管理学院所有在校学生，参赛者以个人为单位参加比赛。<br>
+                            2. 比赛时间为 9 月 17 日—10 月 15 日。所有作品提交须在 10 月 15 日 19：00 前完成。<br>
+                            3. 本次比赛采取积分制，比赛题目共有八题，其中电子设计及控制类 4 题，互联网及软件解决方案类 4 题。参赛者可根据兴趣进行选择题目。参赛题目相关信息将会在后面详细讲解。<br>
+                            4. 在选定题目并上交报名表后，可根据所选题目至经管楼 A404 创新创业工作坊领取相关元件、使用相关工具，并按时参加工作坊举办的题目讲解和技术培训。<br>
+                            5. 比赛期间，工作坊每天将会定时开放供参赛同学使用。<br>
+                            6. 工作坊所有电脑与仪器均可在工作坊成员的指导下使用（特殊标注及私人的除外）。<br>
+                            7. 比赛由总分排名从高到低，分别设一等奖两人，二等奖四人，三等奖八人，优秀奖若干组，分别对应奖品、获奖证书及创新学分。<br>
+                            8. 该比赛最终解释权归创新创业工作坊所有。</p>
+                            <p style="font-weight: bold;">PS: 本比赛和参与招新无关。</p>
+                            </span>
+                            <h2>【比赛题目详解】</h2>
+                            <span>
+                            <p class="indent" style="font-weight: bold;">此次比赛一共分为两个大类：电子设计类和互联网解决方案类。每一个大类里又细分为两个方向：</p>
+                            <p>
+                                • 电子设计类：硬件方向和嵌入式方向；<br>
+                                • 互联网解决方案：前端方向和数据科学方向。<br></p>
+                                
+                            <p class="indent" style="font-weight: bold;">每一个方向有两道题目，一道基础题，一道进阶题。所以，此次比赛总共八道题目可供大家选择。（可能会增加一道开放题）<br></p>
+                            <p>• 此次比赛采取积分制，四个方向分值相同：基础题30分，难度题50分。总分共320分。<br>
+                                • 基础题目不设置过程分，达标即获得30分。难度题将会设置过程分数，每道题目详细的规则将会在后面给出。<br>
+                                • 比赛负责团队将定期更新参赛人员的得分情况统计结果，但不会公布得分对应人员。<br>
+                                • 如果出现相似两人此题得分均减半，如果出现雷同将取消比赛资格，请同学们知悉。</p>
+                                
+                            
+                            </span>
+                            <h2>【比赛相关指导及培训安排】</h2>
+                            <span>
+                            <p>
+                            1. 工作坊会在比赛之前召开大会。在会上，每个方向的负责人将会对每道题目进行较为详细的阐述，供大家做参赛选择的参考。<br>
+                            2. 工作坊在比赛进行过程中的指导与培训将会分为线上指导以及线下指导。<br>
+                            <p class="indent">• 线上指导：比赛负责团队将会在比赛期中不定时/定时发布相关题目的指导信息。同时参赛者随时可以通过QQ等方式寻求指导意见。<br>
+                            </p>
+                            <p class="indent">
+                            • 线下指导：工作坊经常会有熟悉相关方向的大佬出没，欢迎大家常来工作坊。</p></span>
+                            <img src="{{ url_for("static", filename='pic/qq_group.jpg') }}">
+                            <p style="text-align: center; padding: 0;position: relative; top: -30px; font-weight: bold;">第二届SME杯比赛暨工作坊招新群: 690495668</p>
+                        </div>
+                        <div class="tab-pane fade" id="2">
+                            <!--硬件基础题-->
+                            <h1>【键控闪烁灯】</h1>
+                            <h2>【赛题说明】</h2>
+                            <span>
+                            <p>
+                            1.制作一个线性稳压电源，12V学生电源输入，给各模块电路供电，输出电压3V~5V可调，空载电压纹波峰峰值小于0.1V。<br>
+                            2.制作一个单稳态多谐振荡器，由按键控制，脉宽1~3s可调。控制LED1的亮灭。<br>
+                            3.在单稳态多谐振荡器的基础上制作一个多谐振荡器，震荡频率1~20Hz可调，占空比50%，误差±5%。控制LED2的亮灭。  
+                            </p>
+                            </span>
+                            <h2>【测评标准】</h2>
+                            <div class="table-responsive">
+                                <table class="table table-striped">
+                                <caption>设计报告</caption>
+                                <thead>
+                                    <tr>
+                                        <th>项目</th>
+                                        <th>主要内容</th>
+                                        <th>分数</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>系统方案</td>
+                                        <td>系统组成与总方案 </td>
+                                        <td>2</td>
+                                    </tr>
+                                    <tr>
+                                        <td>理论分析与计算</td>
+                                        <td>线性稳压电源的工作原理</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>理论分析与计算</td>
+                                        <td>单稳触发器的工作原理分析与计算理</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>理论分析与计算</td>
+                                        <td>多谐振荡器的工作原理分析与计算</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>理论分析与计算</td>
+                                        <td>时序分析</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                    	<td>电路设计与程序设计</td>
+                                    	<td>模块电路设计及模块间连接</td>
+                                    	<td>3</td>
+                                    </tr>
+                                    <tr>
+                                    	<td>测试方案与测试结果</td>
+                                    	<td></td>
+                                    	<td>4</td>
+                                    </tr>
+                                    <tr>
+                                    	<td>设计报告结构及规范性</td>
+                                    	<td></td>
+                                    	<td>2</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table table-striped">
+                                <caption>基本部分</caption>
+                                <thead>
+                                    <tr>
+                                        <th>项目</th>
+                                        <th>分数</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>完成（1）（2）（3）项</td>
+                                        <td>15</td>
+                                    </tr>
+                                    
+                                </tbody>
+                            </table>
+                            </div>
+                            
+                            <h2>【注意事项】</h2>
+                            <span>
+                                <p>
+                                    1. 电源采用220V交流电，可向工作坊借用变压器。<br>
+                                    2. 设计报告采用打印形式。<br>
+                                    3. 系统模块留出必要的测试段子。
+                                </p>
+                            </span>
+                        </div>
+                        <div class="tab-pane fade" id="3">
+                            <!--硬件进阶题-->
+                            <h1>【数显电子琴】</h1>
+                            <h2>【设计任务】</h2>
+                            <span>
+                            <p>设计制作一个简易的电子琴装置，通过按键方式使发声器件发出音乐，简易示意图如图 1 所示。
+                                <img src="{{ url_for("static", filename='pic/电子琴简易示意图.png') }}" alt="图一">
+                            </p>
+                            </span>
+                            <h2>【设计要求】</h2>
+                            <span>
+                            <p>
+                            1、基本要求<br>
+                            &emsp;&emsp;1.1 制作一个锯齿波振荡器。振荡频率 698Hz，频率误差 5%以内，电压峰
+                            峰值 1-2 V 连续可调；<br>
+                            &emsp;&emsp;1.2 在 1.1 的基础上，实现振荡器振荡频率可切换：按键控制，可以振荡
+                            产生‘do’ ‘re’ ‘mi’ ‘fa’ ‘sol’ ‘la’ ‘si’七个基本音的频率，频率误差 2%以内；<br> 
+                            &emsp;&emsp;1.3 在 1.1 和 1.2 的基础上，制作一个简易电子琴。搭建功率放大模块，
+                            可驱动 8 Ω阻性喇叭，最大输出功率大于 0.1W。按键控制，喇叭发出题
+                            目要求 1.2 中的七个基本音。功率放大模块可单独测试。<br>
+                            </p>
+                            </span>
+                            <span>
+                            <p>
+                            2、发挥部分<br>
+                            &emsp;&emsp;2.1 制作数字显示电路，利用数码管实时显示当前发出的声音所对应的简
+                            谱数字。电子琴不发声时数码管不显示；  <br>
+                            &emsp;&emsp;2.2 其它（如自制线性稳压电源， 使用晶体管或运算放大器搭建尽可能多
+                            的模块，附加其它功能等）。  <br>
+                            </p>
+                            </span>
+                            </span>
+                            <h2>【赛题说明】</h2>
+                            <div class="table-responsive">
+                                <table class="table table-striped">
+                                <caption>各音调对应频率参考表</caption>
+                                <thead>
+                                    <tr>
+                                        <th>音调</th>
+                                        <th>简谱</th>
+                                        <th>频率/Hz</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Do</td>
+                                        <td>1</td>
+                                        <td>523</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Re</td>
+                                        <td>2</td>
+                                        <td>587</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mi</td>
+                                        <td>3</td>
+                                        <td>659</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Fa</td>
+                                        <td>4</td>
+                                        <td>698</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sol</td>
+                                        <td>5</td>
+                                        <td>784</td>
+                                    </tr>
+                                    <tr>
+                                        <td>La</td>
+                                        <td>6</td>
+                                        <td>880</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Si</td>
+                                        <td>7</td>
+                                        <td>988</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                            
+                            <span>
+                                <p>
+                                    1. 系统内不得使用可编程器件，如单片机等；<br>
+                                    2. 测试输出功率时使用 8 欧阻性负载测试，要求预先设置测试端子, 测试时使用正弦波信号测试输出功率，喇叭可以断开；<br>
+                                    3. 若使用自制的 PCB 板，板上需打印出姓名和学号。
+                            </p>
+                            </span>
+                            <h2>【评分标准】</h2>
+                            <div class="table-responsive"><table class="table table-striped">
+                                <caption>设计报告</caption>
+                                <thead>
+                                    <tr>
+                                        <th>项目</th>
+                                        <th>主要内容</th>
+                                        <th>分数</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>系统方案</td>
+                                        <td>方案选择、论证</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>理论分析与计算</td>
+                                        <td>进行必要的分析、计算</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>电路设计</td>
+                                        <td>电路设计</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>测试方案与测试结果</td>
+                                        <td>表明测试方案和测试结果</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>设计报告结构及规范性</td>
+                                        <td>图表的规范性</td>
+                                        <td>1</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                            <div class="table-responsive">
+                                <table class="table table-striped">
+                                <caption>基本要求</caption>
+                                <thead>
+                                    <tr>
+                                        <th>项目</th>
+                                        <th>分数</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>完成第1.1项</td>
+                                        <td>5</td>
+                                    </tr>
+                                    <tr>
+                                        <td>完成第1.2项</td>
+                                        <td>10</td>
+                                    </tr>
+                                    <tr>
+                                        <td>完成第1.3项</td>
+                                        <td>5</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table table-striped">
+                                <caption>发挥要求</caption>
+                                <thead>
+                                    <tr>
+                                        <th>项目</th>
+                                        <th>分数</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>完成第2.1项</td>
+                                        <td>15</td>
+                                    </tr>
+                                    <tr>
+                                        <td>完成第2.2项</td>
+                                        <td>5</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            </div>
+                            
+                            <h2>【参考资料】</h2>
+                            <span>
+                            <p>
+                                1、《晶体管电路设计》（日）铃木雅臣<br>
+                                2、《基于运算放大器和模拟集成电路的电路设计》 (美)佛朗哥
+                            </p>
+                            </span>
+                        </div>
+                        <div class="tab-pane fade" id="4">
+                            <!--嵌入式基础题-->
+                            <h1>【密码锁】</h1>
+                            <h2>【赛题说明】</h2>
+                            <span>
+                                <p>
+                                    完成一个可以显示修改密码的密码锁（满分30分）
+                                </p>
+                            </span>
+                            <h2>【基础要求】</h2>
+                            <span>
+                                <p>
+                                    1. 正确显示按键按下的密码（至少4位）<br>
+                                    2. 设定一个初始密码（至少4位），当密码输入正确时屏幕显示出一种字符/图案，当密码输入错误时显示一种字符/图案。（字符/图案仅作识别正确错误的区分，无特殊要求。如：正确输入显示“666”，错误输入显示“999”） <br>
+
+                               		3. 增加撤销按键。即可以撤销上一位输入，如：已输入“196”，点击撤销后，变为“19” 
+                            	</p>
+                            </span>
+                            <h2>【注意事项】</h2>
+                            <span>
+                            	<p>
+                            		请配上你的产品使用说明书以及适当包装作品，会视情况好坏加不同分。
+                            	</p>
+                            </span>
+                            <h2>【参考资料】</h2>
+                            <span>
+                                <p>
+                                    1. 《STM32库开发实战指南》：
+                                    <img src="static", filename='pic/图一.jpg') }}" alt="">
+                              
+                                    2. 《电子设计从零开始》：
+                                    <img src="static", filename='pic/图二.jpg') }}" alt="">
+                              
+                                    3. 涉及模块：数码管，按键，EEPROM<br>
+                                    4. STM32开发板（学习用的板子上面很多模块都有） <br> 
+                                    &emsp;&emsp;https://item.taobao.com/item.htm?id=20428448343<br>
+                                    5. 视频教程 ：<br>
+                                    &emsp;&emsp;腾讯课堂下载链接：https://ke.qq.com/course/279762?tuin=1730a331  <br>
+                                    &emsp;&emsp;腾讯课堂在线观看链接：https://ke.qq.com/course/278479  <br>
+                                    百度网盘下载链接：  <br>
+                                    &emsp;&emsp;A盘独立压缩包: http://pan.baidu.com/s/1c2zdIJQ 程序源码，手册，软件等除视频外的所有其他资料<br>  
+                                    &emsp;&emsp;B盘独立压缩包: http://pan.baidu.com/s/1i5GwEqT 视频盘,《手把手教你学STM32-M3》视频  <br>
+                                    &emsp;&emsp;C盘独立压缩包：http://pan.baidu.com/s/1miPJYeW 视频盘,《手把手教你学STM32-M3》视频  <br>
+                                    &emsp;&emsp;D盘独立压缩包：http://pan.baidu.com/s/1i4UZ4Lf 视频盘,《手把手教你学STM32-M3》视频  <br>
+
+
+                            </p>
+                            </span>
+                        </div>
+                        <div class="tab-pane fade" id="5">
+                            <!--嵌入式进阶题-->
+                            <h1>【计步器】</h1>
+                            <span>
+                                <p>
+                                    利用小灯，串口通信和MPU6050实现一个计步器（满分50分）
+                                </p>
+                            </span>
+                            <h2>【基础要求】</h2>
+                                	<ul>
+                                		<li>
+                                			可以通过电脑和STM32单片机进行USB/WiFi/蓝牙通信，当电脑给单片机发送数字“1”的时候，LED灯闪烁，当发送数字“2”时，蜂鸣器循环播放一些东西，当一个功能开始时，另一个功能必须结束，即若灯开始闪烁则蜂鸣器停止播放（5分）<br>
+                                		</li>
+                                		<li>
+                                			在上述“1”，“2”外，增加发送“3”时读取MPU6050传感数据得到当前的3个方向角加速度，以及三个角度轴的加速度，通过USB发送给电脑显示（10分）
+                                		</li>
+                                	</ul>
+                            <h2>【拓展要求】</h2>
+                            <span>
+                                <p>
+                                   在已知加速度下利用卡尔曼滤波等手段可以计算出累计行进路程。在上述“1”，“2”，“3”增加发送“4”，发送“4”后开始计算累计路程。然后当累计行程到两米时，有所提示（灯闪，蜂鸣器叫等），累计路程精度越高，得分越高（注意路程不全为单方向直线，也有曲线或直走一米左转一米等（35分）
+                                </p>
+                            </span>
+                            <h2>【注意事项】</h2>
+                            <span>
+                                <p>
+                                    请配上你的产品使用说明书以及适当包装作品，会视情况好坏加不同分
+                                </p>
+                            </span>
+                            <h2>【参考资料】</h2>
+                            <span>
+                                <p>
+                                    1. 《STM32库开发实战指南》：
+
+                                    <img src="static", filename='pic/图一.jpg') }}" alt="">
+                              
+                                    2. 《电子设计从零开始》：
+
+                                    <img src="static", filename='pic/图二.jpg') }}" alt="">
+                              
+                                    3. 涉及模块：数码管，按键，EEPROM<br>
+                                    4. STM32开发板（学习用的板子上面很多模块都有）  <br>
+                                    https://item.taobao.com/item.htm?id=20428448343  <br>
+                                    5. 卡尔曼滤波理解（仅作参考，可以使用其他滤波，反正最后是比谁精度高，那个效果好用哪个）  
+                                    https://www.zhihu.com/question/23971601<br>
+                                    6. 视频教程  <br>
+                                    腾讯课堂下载链接：https://ke.qq.com/course/279762?tuin=1730a331 <br>
+                                    腾讯课堂在线观看链接：https://ke.qq.com/course/278479  <br>
+                                    百度网盘下载链接：  <br>
+                                    &emsp;&emsp;A盘独立压缩包: http://pan.baidu.com/s/1c2zdIJQ 程序源码，手册，软件等除视频外的所有其他资料  <br>
+                                    &emsp;&emsp;B盘独立压缩包: http://pan.baidu.com/s/1i5GwEqT 视频盘,《手把手教你学STM32-M3》视频  <br>
+                                    &emsp;&emsp;C盘独立压缩包：http://pan.baidu.com/s/1miPJYeW 视频盘,《手把手教你学STM32-M3》视频  <br>
+                                    &emsp;&emsp;D盘独立压缩包：http://pan.baidu.com/s/1i4UZ4Lf 视频盘,《手把手教你学STM32-M3》视频  <br>
+                                </p>
+                            </span>
+                        </div>
+                        <div class="tab-pane fade" id="6">
+                            <!--前端基础题-->
+                            <h1>【三栏式布局】</h1>
+                            <h2>【成品展示】</h2>
+                            <span>
+                                <p>
+                                    <img src="static", filename='pic/图片1.png') }}" alt="图片1">
+                                </p>
+                            </span>
+                            <h2>【赛题说明】</h2>
+                            <span>
+                                <p class="indent">
+                                本题涉及主要内容为前端方面一个较为基础并且重要的三栏式布局的知识，完成的作品要与上图相同，可通过百度了解有关三栏式布局的知识。相关属性要求及说明见测评标准，其余要求见注意事项，符合条件完成者即可获得30分，否则即为0分。
+                                </p>
+                            </span>
+                            <h2>【测评标准】</h2>
+                            <span>
+                                <p>                                    
+                                    <img src="static", filename='pic/图片2.png') }}" alt="图片2">
+                                </p>
+                            </span>
+                            <h2>【注意事项】</h2>
+                            <span>
+                            <p>
+                            要求： <br>
+                            &emsp;&emsp;1、利用三栏式布局的方法制作。<br>
+                            &emsp;&emsp;2、中间的div宽度和高度均为自适应。<br>
+                            &emsp;&emsp;3、要用到浮动和清除浮动的方法。<br>
+                            &emsp;&emsp;4、相关属性要求见测评标准。<br>
+                            &emsp;&emsp;5、成品要与题目要求作品展示效果相同（包括文字内容）。<br>
+                            &emsp;&emsp;6、除测评标准及本要求规定的作品相关属性要求之外，不做要求。
+                            </p>
+                            </span>
+                            <h2>【参考资料】</h2>
+                            <span>
+                            <p>
+                            1、 图书资料： 《零基础学Html+CSS》：
+                            <img src="static", filename='pic/图片3.png') }}" alt=""><br>
+                            2、 在线学习资料：<br>
+                            http://www.w3school.com.cn/index.html<br>https://www.imooc.com/ http://www.runoob.com/html/html-tutorial.html<br>
+                            http://zh.learnlayout.com/index.html<br>
+                            以及最重要的：https://www.baidu.com/
+                            </p>
+                            </span>
+                        </div>
+                        <div class="tab-pane fade" id="7">
+                            <!--前端进阶题-->
+                            <h1>【Copy master】</h1>
+                            <h2>【基础要求】</h2>
+                            <span>
+                                <p>
+                                    目标: <br>
+                                    &emsp;&emsp;复刻淘宝网首页第一屏部分(1920×1080)  <br>
+                                    要求: <br>
+                                    &emsp;&emsp;只需完成静态部分，无需实现动态部分。简而言之，视觉效果如下截图即可。  
+                                    <img src="static", filename='pic/图一.png') }}" alt="">
+                                </p>
+                            </span>
+                            <h2>【扩展要求】</h2>
+                            <span>
+                                <p>
+                                目标: <br>
+                                &emsp;&emsp;实现部分动态部分<br>
+                                要求:<br>
+                                &emsp;&emsp;1. 实现”主题市场”下列表的光标悬停展示详情功能  
+
+
+
+                                <img src="static", filename='pic/图二.png') }}" alt="">
+
+                                &emsp;&emsp;2. 实现图片轮播功能
+
+                                <img src="static", filename='pic/图三.png') }}" alt="">
+
+                                &emsp;&emsp;3. 实现光标悬停冒头功能<br>
+
+                                &emsp;&emsp;&emsp;&emsp;光标未悬停:
+
+                                <img src="static", filename='pic/图四.png') }}" alt="">
+
+                                &emsp;&emsp;&emsp;&emsp;光标悬停:  
+                                <img src="static", filename='pic/图五.png') }}" alt="">
+
+                                &emsp;&emsp;4. 其他隐藏式设计，例如：  
+
+                                <img src="static", filename='pic/图六.png') }}" alt="">
+
+                                &emsp;&emsp;5. 淘宝网首页上你能够实现的其他部分，根据效果和难度酌情评分  
+                                </p>
+                            </span>
+                            <h2>【测评标准】</h2>
+                            <span>
+                                <p>
+                                满分共计50分。 <br> 
+                                &emsp;&emsp;1.  基础部分（15分）。根据与规定网页的相似度进行评判，得分=相似度x20分。  <br>
+                                &emsp;&emsp;2.  拓展部分（30分）。每完成一项复杂功能（不限上述内容），根据完成情况，获得0~5分不等。  <br>
+                                &emsp;&emsp;3.  网页稳定性（2分）。即在合理范围内通过缩小或放大浏览器界面大小，查看网页是否发生布局混乱等问题，得分0~2分不等。  <br>
+                                &emsp;&emsp;4.  代码整洁度（3分）。通过代码是否整齐，注释是否合理运用，HTML、CSS、JavaScript等代码内容是否合理配置，得分0~3分不等。<br>
+                                扣分项。检查与原网页代码相似度，扣分0~5分不等。若几乎完全相似或相似度奇高，则总分判0分。  
+                                </p>
+                            </span>
+                            <h2>【注意事项】</h2>
+                            <span>
+                                <p>
+                                    
+                                1.  部分重复内容无需一一实现。例如，”主题市场”列表下的各行内容可用相同内容替换,展示尺寸相同的图片允许使用同一图片替换。  <br>
+                                2.  不应过度简化页面元素，例如：不应简单地使用截图替换某由文本与图片构成的部分。  <br>
+                                3.  不得过多借鉴复制他人或淘宝网源代码，鼓励手动实现。  <br>
+                                4.  鼓励在资料学习和制作作品过程中主动了解相关知识和解决方案、互相探讨，鼓励探讨、检索半小时后仍无果时主动求助评分者。  <br>
+                                5.  敬请关注比赛过程中可能发布的其他相关信息。  <br>
+                                </p>
+                            </span>
+                            <h2>【参考资料】</h2>
+                            <span>
+                                <p>
+                                    
+                                1.  图书资料：  
+                                《零基础学Html+CSS》：  
+                                <img src="static", filename='pic/图七.png') }}" alt="">
+                                2.  在线学习资料：  <br>
+                                &emsp;&emsp;http://www.w3school.com.cn/  <br>
+                                &emsp;&emsp;http://www.runoob.com/html/html-tutorial.html  <br>
+                                &emsp;&emsp;https://www.imooc.com/  <br>
+                                &emsp;&emsp;http://zh.learnlayout.com/index.html  <br>
+                                以及最重要的：https://www.baidu.com/   <br>
+
+                                 <h2>【创新加分项】</h2>
+                                &emsp;&emsp;在了解淘宝网首页功能的基础上，能作出适当的改进的，或实现思路清奇且优秀的，酌情给予0 - 10的加分。<br><br>
+                                </p>
+                            </span>
+                        </div>
+                        <div class="tab-pane fade" id="8">
+                            <!--数据基础题-->
+                            <h1>【收集优化问题】</h1>
+                            <h2>【赛题说明】</h2>
+                            <span>
+                                <p>
+                                    &emsp;&emsp;在一片区域内有N个地点，每个地点有价值不同的物品，所有地点之间都有道路相连，且经过每条道路需要耗费相应的时间。现在给定时间T，要求在规定时间内收集物品，并使其总价值最大。其中出发点可以为所有地点中的任意一个，输出结果为物品的最大总价值及其所经过的路线（只需一条）。同时，若可在规定时间T内到达所有地点，则要求出耗时最短的路线，并输出所需的最短时间。例如，
+
+
+                                    <img src="static", filename='pic/数据图一.png') }}" alt="">
+                                      
+                                    N=4，T=70，则从20经9到8，再经34到12，最后经15到4  <br>
+                                    则输出结果为：  <br>
+                                    &emsp;&emsp;44   <br>
+                                    &emsp;&emsp;20-(9)-8-(15)-12-(15)-4  <br>
+                                    &emsp;&emsp;20-(9)-8-(15)-12-(15)-4  <br>
+                                    &emsp;&emsp;39   <br>
+                                </p>
+                            </span>
+                            <h2>【测评标准】</h2>
+                            <span>
+                                <p>
+                                    1. 本题将会提供五幅图片作为求解对象，参赛选手需按照要求输出所有的正确答案。  <br>
+                                    &emsp;a.输出收集到的物品的最大总价值及其所经过的路线。  <br>
+                                    &emsp;b.若可在规定时间T内到达所有地点，则要求出耗时最短的路线，并输出所需的最短时间。  <br>
+                                    &emsp;c.输入方式以txt.文件输入，输入信息及格式自行决定，但需要添加说明。  <br>
+                                    &emsp;d.输出结果格式以例题为标准，以txt.文件输出。  <br>
+                                    2. 参赛选手需为自己的代码添加详细的注释，说明代码的步骤及功能。<br>
+                                    3. 参赛选手书写一份100字至300字之间的解题思路，包括使用的算法等。    <br>
+                                </p>
+                                <p style="font-weight: bold;">
+                                	图一：T=45
+                                	<img src="static", filename='pic/附件1.png') }}" alt="附件">
+                                </p>
+                                <p style="font-weight: bold;">
+                                	图一：T=70
+                                	<img src="static", filename='pic/附件2.png') }}" alt="附件">
+                                </p>
+                                <p style="font-weight: bold;">
+                                	图一：T=90
+                                	<img src="static", filename='pic/附件3.png') }}" alt="附件">
+                                </p>
+                                <p style="font-weight: bold;">
+                                	图一：T=70
+                                	<img src="static", filename='pic/附件4.png') }}" alt="附件">
+                                </p>
+                                <p style="font-weight: bold;">
+                                	图一：T=100
+                                	<img src="static", filename='pic/附件5.png') }}" alt="附件">
+                                </p>
+                            </span>
+                            <h2>【注意事项】</h2>
+                            <span>
+                                <p>
+                                    &emsp;&emsp;收集物体总价值最大的路线和到达所有地点耗时最短的路线可能存在多条，但两者均各输出一条即可。
+                                </p>
+                            </span>
+                            <h2>【参考资料】</h2>
+                            <span>
+                                <p>
+                                    《C/C++ Primer Plus》：  
+
+                            <img src="static", filename='pic/数据图二.png') }}" alt="">
+
+                            《Python 基础教程》：  
+
+                            <img src="static", filename='pic/数据图三.png') }}" alt="">
+                                </p>
+                            </span>
+                        </div>
+                        <div class="tab-pane fade" id="9">
+                            <!--数据进阶题-->
+                            <h1>【攻城略地】</h1>
+                            <h2>【赛题介绍】</h2>
+                            <span>
+                                
+                                <p class="indent" style="font-weight: bold;">
+                                这是一款使用程序自动抢占领地的游戏。</p>
+                                <br>
+                                <p class="indent">
+                                	以下内容为本题题目内容详解，题目详情、教程、以及API接口文档请参阅由出题人自己维护的网页，并以其为准。<br>
+                                	&emsp;&emsp;网页链接：https://vincentgaohj.github.io/web_preemption/preemption.html<br><br>
+                                </p>
+                                <p class="indent" style="font-weight: bold;">
+                                游戏内容：
+                                </p>
+                                <p class="indent">
+                                我们提供这样一个游戏对战平台， 地图为中国地图，每个省为一个城堡，城堡所在省份实际大小即为控制领地大小，城堡与城堡之间又相生相克的关系，游戏双方先后占领未被双方占领的任意城堡，占领后所有的被此城堡克的城堡（也就是这个城堡生的城堡）成为本方城堡（无论此城堡之前状态）。当所有城堡均被占领后，比较双方所占领地大小，大者获胜。所获分数为己方占领地盘大小减去敌方占领地盘大小。 <br> 
+                                &emsp;&emsp;而且每一局城堡间相生相克关系是变化的。所以参与本题的同学需要设计一套算法来实现自动落子。  <br>
+                                </p>
+                                <p class="indent" style="font-weight: bold;">
+                                    具体细节：
+                                </p>
+                                <p class="indent"> 
+                                    我们将会给出大家所需要的所有细节。比如省份名称，省份代码，所对应的实际大小：
+                                </p>
+                            </span>
+                            <div class="table-responsive">
+                                <table class="table table-striped">
+                                <caption>省份信息对照表（节选）</caption>
+                                <thead>
+                                    <tr>
+                                        <th>序号</th>
+                                        <th>行政区划</th>
+                                        <th>代号</th>
+                                        <th>面积（万平方公里）</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>安徽省</td>
+                                        <td>Anhui</td>
+                                        <td>13.97</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>澳门特别行政区</td>
+                                        <td>Macao</td>
+                                        <td>0.00328</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            </div>
+                            
+                            <span>
+                                <p class="indent">
+                                由于每一局的相生相克规则是不一样的，所以我会在github上放置1例相生相克规则，例如：  <br>
+                                &emsp;&emsp;&emsp;&emsp;Shandong ==> Macao（山东 “生” 澳门）  <br>
+                                &emsp;&emsp;&emsp;&emsp;Zhejiang ==> Hong_Kong（浙江 “生” 香港）  <br>
+                                &emsp;&emsp;&emsp;&emsp;Gansu ==> Hong_Kong  <br>
+                                &emsp;&emsp;&emsp;&emsp;Beijing ==> Hubei  <br>
+                                &emsp;&emsp;&emsp;&emsp;Hong_Kong ==> Hunan  <br>
+                                &emsp;&emsp;&emsp;&emsp;Tianjin ==> Jilin  <br>
+                                </p>
+                            </span>
+                            <p class="indent" style="font-weight: bold;">
+                                游戏流程：
+                            </p>
+                            <span>
+                            <p class="indent">
+                            游戏初始状态为空白的中国地图，游戏在机器人（蓝方）与参与本题的同学（红方）中展开，如图：
+                                  
+                                <img src="static", filename='pic/数据进阶图一.png') }}" alt="">
+                            </p>
+                            </span>
+                            <span>
+                                <p class="indent">
+                                蓝方，也就是电脑先行占领城堡，假设它选择了**北京**，然而根据相生相克规则，**北京**又“生”**新疆**与**安徽**，那么战况如下：
+                                  
+                                <img src="static", filename='pic/数据进阶图二.png') }}" alt="">
+                                </p>
+                            </span>
+                            <span>
+                                <p class="indent">
+                                    红方，也就是参赛选手选择了**宁夏**，根据相生相克规则，**宁夏**又“生”**海南**与**新疆**，那么战况变更为如下：
+                                  
+                                <img src="static", filename='pic/数据进阶图三.png') }}" alt="">
+                                </p>
+                            </span>
+                            <span>
+                                <p class="indent">
+                                当所有城堡均被占领后，游戏结束，最终如下：
+                                  
+                                <img src="static", filename='pic/数据进阶图四.png') }}" alt="">
+                                &emsp;&emsp;此时进入清算环节，注意，比赛比的是哪方占领的城堡对应的领地总大小，而不是城堡数量。
+                                </p>
+                            </span>
+                            <h2>【基础要求】</h2>
+                            <span>
+                                <p>
+                                      
+                            - 无需从服务器端获取到图片可视化信息。<br>
+                            - 完成与服务器的交互并且自动获取到相生相克规则。  <br>
+                            - 与电脑对战一局，并且获得最终分数。  <br>
+                            - 实现自动对战500盘，并且计算出平均得分。  <br>
+                                </p>
+                            </span>
+                            <h2>【扩展要求】</h2>
+                            <span>
+                                <p>
+                                    
+                            - 基础要求对得分没有要求，扩展要求希望大家能够尽可能的设计算法以取得高分。  <br>
+                            - 从服务器端获取到可视化界面，并且完整和服务器对战一局，并且获得完整流程的可视化对战情况。  
+                                </p>
+                            </span>
+                            <h2>【测评标准】</h2>
+                            <div class="table-responsive">
+                                <table class="table table-striped">
+                                <caption></caption>
+                                <thead>
+                                    <tr>
+                                        <th>评分项目</th>
+                                        <th>主要内容</th>
+                                        <th>分数</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>基础要求：完成与服务器的交互</td>
+                                        <td>完成与服务器的交互并且自动获取到相生相克规则</td>
+                                        <td>5</td>
+                                    </tr>
+                                    <tr>
+                                        <td>基础要求：完成与服务器的交互</td>
+                                        <td>与电脑对战一局，并且获得最终分数</td>
+                                        <td>10</td>
+                                    </tr>
+                                    <tr>
+                                        <td>基础要求：完成与服务器的交互</td>
+                                        <td>实现自动对战500盘，并且计算出平均得分</td>
+                                        <td>5</td>
+                                    </tr>
+                                    <tr>
+                                        <td>扩展要求：设计算法并且拿到高分</td>
+                                        <td>得分 > 200</td>
+                                        <td>5</td>
+                                    </tr>
+                                    <tr>
+                                        <td>扩展要求：设计算法并且拿到高分</td>
+                                        <td>得分 > 400</td>
+                                        <td>5</td>
+                                    </tr>
+                                    <tr>
+                                        <td>扩展要求：设计算法并且拿到高分</td>
+                                        <td>得分 > 600</td>
+                                        <td>5</td>
+                                    </tr>
+                                    <tr>
+                                        <td>扩展要求：设计算法并且拿到高分</td>
+                                        <td>获得可视化界面</td>
+                                        <td>5</td>
+                                    </tr>
+                                    <tr>
+                                        <td>代码以及算法要求</td>
+                                        <td>代码整洁度以及注释齐全程度</td>
+                                        <td>3</td>
+                                    </tr>
+                                    <tr>
+                                        <td>代码以及算法要求</td>
+                                        <td>算法复杂度以及时间消耗程度</td>
+                                        <td>3</td>
+                                    </tr>
+                                    <tr>
+                                        <td>代码以及算法要求</td>
+                                        <td>报告质量</td>
+                                        <td>4</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            </div>
+                            
+                            <h2>【注意事项】</h2>
+                            <span>
+                                <p>
+                                - 评分项目中完成与服务器的交互为硬性指标，也就是完成某项即获得某项的所有分数。  <br>
+                                - 设计算法并且拿到高分这一部分，后期会根据参赛本题人员最终结果以及与其他题目难度比较进行小幅度的调整，以及对区间内分数进行给分（300分的最终得分会高于250分）  <br>
+                                - 代码，算法以及报告部分根据完成情况而定。  
+                                </p>
+                            </span>
+                            <h2>【教程指导】</h2>
+                            <span>
+                                <p style="font-weight: bold">
+                                	1、Python
+                                	<img src="static", filename='pic/python.jpg') }}" alt="">
+                                </p>
+                                <p style="font-weight: bold">
+                                	2、C语言
+                                	<img src="static", filename='pic/C语言.jpg') }}" alt="">
+                                </p>
+                            </span>
+                            <h2>【参考资料】</h2>
+                            <span>
+                                <p>
+                                - 后期会有较为详细的指导教程，但是点到为止。  
+                                </p>
+                            </span>
+                            <h2>【重要提示】</h2>
+                            <span>
+                                <p>
+                                本题采用中国地图目的是为了方便大家熟悉地图中的元素，减少地图带来的题目难度，没有任何政治目的以及地域性目的，请同学们不要上纲上线，让我们一同坚持一个中国原则并且坚持中国主权和领土完整。
+
+                                </p>
+                            </span>
+                            <h2>【创新项加分说明】</h2>
+                            <span>
+                                <p>
+                                    
+                                &emsp;&emsp;若参赛组完成了基础要求和拓展要求以外的内容，可根据难度和创新性适当加分，以下仅提供一些创新性思路以供参考。<br>
+                                &emsp;&emsp;- 对题目设定提出建设性的改进意见。  <br>
+                                &emsp;&emsp;- 指出游戏的逻辑漏洞或者是程序漏洞。  <br>
+                                &emsp;&emsp;- 对题目所涉及到的数理知识进行严谨论述。  <br>
+                                &emsp;&emsp;- 与电脑进行大量对战并且进行数据分析。
+                                </p>
+                            </span>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer" '>
+    </div>
+    <script src="static", filename='js/test.js') }}"></script>
+    <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!--JavaScript加载较慢,放在最后-->
+</body>
+
+</html>

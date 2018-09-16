@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>user</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="basic.css">
+    <link rel="stylesheet" href="user.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <span class="sr-only">切换导航</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <a class="navbar-brand" id="brand" href="">创新创业工作坊</a>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="col-md-12 pmsg-mark row">
+            <div class="col-md-6 personal-msg">
+                <div id="msg-text">
+                    <span><p>用户<span class="le-sp">名:</span><strong>Donald Trump</strong></p></span>
+                    <span><p><span class="le-sp">昵称:</span><strong>川普</strong></p></span>
+                    <span><p><span class="le-sp">邮箱:</span><strong>dt@trump.com</strong></p></span>
+                </div>
+                <button id="apply-btn" class="btn btn-default"><a href="submit.html">申&nbsp;请&nbsp;测&nbsp;评</a></button>
+            </div>
+            <div class="col-md-6 mark">
+                <span><p>总排<span class="le-sp">名:</span><strong>2</strong></p></span>
+                <span><p>总得<span class="le-sp">分:</span><strong>999</strong></p></span>
+                <table class="table table-striped">
+                    <caption>得分详情</caption>
+                    <thead>
+                        <tr>
+                            <th>方向</th>
+                            <th>类型</th>
+                            <th>得分</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>硬件</td>
+                            <td>基础题</td>
+                            <td>30</td>
+                        </tr>
+                        <tr>
+                            <td>硬件</td>
+                            <td>进阶题</td>
+                            <td>87</td>
+                        </tr>
+                        <tr>
+                            <td>嵌入式</td>
+                            <td>基础题</td>
+                            <td>30</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col-md-12 rank-con">
+            <div class="rank">
+                <table class="table table-striped">
+                    <caption>排行榜</caption>
+                    <thead>
+                        <tr>
+                            <th style="min-width: 58px;">总排名</th>
+                            <th colspan="2">昵称</th>
+                            <th></th>
+                            <th style="min-width: 58px;">总得分</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!--一个基础的例子的开头-->
+                        <tr class="big-line">
+                            <td>1</td>
+                            <td colspan="3">我不是王重阳</td>
+                            <td>110</td>
+                        </tr>
+                        <!--每个人都要输出一个mini-th-->
+                        <!--若为零分,则不输出mini-th和下面的详情-->
+                        <tr class="mini-th">
+                            <td></td>
+                            <td></td>
+                            <td>方向</td>
+                            <td>类型</td>
+                            <td>得分</td>
+                        </tr>
+                        <!--这是一项得分详情-->
+                        <tr class="mini-td">
+                            <td></td>
+                            <td></td>
+                            <td>硬件</td>
+                            <td>基础题</td>
+                            <td>30</td>
+                        </tr>
+                        <!--到此构成一项得分详情-->
+                        <tr class="mini-td">
+                            <td></td>
+                            <td></td>
+                            <td>硬件</td>
+                            <td>进阶题</td>
+                            <td>30</td>
+                        </tr>
+                        <tr class="mini-td">
+                            <td></td>
+                            <td></td>
+                            <td>嵌入式</td>
+                            <td>基础题</td>
+                            <td>30</td>
+                        </tr>
+                        <!--一个基础例子的结束-->
+                        <tr class="big-line">
+                            <td>2</td>
+                            <td colspan="3">今天我郭靖名字就是天下第一长</td>
+                            <td>107</td>
+                        </tr>
+                        <tr class="mini-th">
+                            <td></td>
+                            <td></td>
+                            <td>方向</td>
+                            <td>类型</td>
+                            <td>得分</td>
+                        </tr>
+                        <tr class="mini-td">
+                            <td></td>
+                            <td></td>
+                            <td>硬件</td>
+                            <td>进阶题</td>
+                            <td>30</td>
+                        </tr>
+                        <tr class="mini-td">
+                            <td></td>
+                            <td></td>
+                            <td>嵌入式</td>
+                            <td>基础题</td>
+                            <td>30</td>
+                        </tr>
+                        <tr class="big-line">
+                            <td>3</td>
+                            <td colspan="3">杨过想哭</td>
+                            <td>103</td>
+                        </tr>
+                        <tr class="mini-th">
+                            <td></td>
+                            <td></td>
+                            <td>方向</td>
+                            <td>类型</td>
+                            <td>得分</td>
+                        </tr>
+                        <tr class="mini-td">
+                            <td></td>
+                            <td></td>
+                            <td>硬件</td>
+                            <td>进阶题</td>
+                            <td>30</td>
+                        </tr>
+                        <tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid" id="footer">
+    </div>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+
+</html>
